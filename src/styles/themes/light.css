@@ -1,0 +1,25 @@
+:root {
+  /* Flat palette from before */
+  --card-bg: #f9f9fb;
+  --card-border: #e2e2e7;
+  --card-hover: #f1f1f5;
+  --accent: #d0d0d5;
+  --text-main: #222;
+  --text-strong: #111;
+  --text-muted: #666;
+
+  /* Header palette */
+  --header-bg: #2b2d31;         /* deep gray, anchors the layout */
+  --header-hover: #303236;      /* subtle hover lift */
+  --header-border: #3a3c40;     /* gentle bottom separation */
+  --header-text: #f3f3f3;       /* readable against dark bg */
+  --header-accent: #ffffff;     /* if you want to highlight title/logo */
+  --text-secondary: #ddd;
+  --secondary: var(--header-bg);
+
+  --sidebar-bg: #f1f1f3;
+  --sidebar-border: #d4d4d8;
+  --sidebar-hover-bg: #e4e4e8;
+  --sidebar-active-bg: #2b2d31;
+  --sidebar-active-text: #f5f5f5;
+}

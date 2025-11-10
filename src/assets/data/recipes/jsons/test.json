@@ -1,0 +1,8 @@
+{
+  "title": "Test",
+  "ingredients": ["flour", "milk", "eggs", "sugar", "baking powder"],
+  "instructions": [
+    "Mix ingredients until smooth.",
+    "Pour onto hot pan, flip when bubbles form."
+  ]
+}
