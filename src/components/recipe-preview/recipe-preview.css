@@ -5,15 +5,21 @@
 .recipe-preview--wrapper {
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding-inline: 0.5rem;
-  margin-top: -1rem;
+  height: 100%;
+  position: relative;
+  margin-bottom: 2em;
+  flex-grow: 1;
 }
 
 /* --- Letter group --- */
 .recipe-preview--container {
   padding-top: 2rem;
   width: 100%;
+}
+
+.recipe-preview--recipes {
+  position: relative;
 }
 
 .recipe-preview--letter {
@@ -100,4 +106,33 @@
   .recipe-preview--card {
     flex: 1 1 100%;
   }
+}
+
+.recipe-preview--search {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding-top: 1em;
+  background: white;
+  margin-top: -1em;
+}
+
+.recipe-preview--searchbar {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  outline: none;
+}
+
+.recipe-preview--searchbar:focus {
+  border-color: #888;
+}
+
+.recipe-preview--no-results {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 2rem;
 }

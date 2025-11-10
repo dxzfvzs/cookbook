@@ -28,10 +28,7 @@ export default function Main() {
   return (
     <div className="main-content">
       <div className="side-by-side">
-        <Sidenav
-          selectedLetter={selectedLetter}
-          onSelectLetter={handleSelectLetter}
-        />
+        <Sidenav selectedLetter={selectedLetter} onSelectLetter={handleSelectLetter}/>
         <RecipePreviewCard />
       </div>
     </div>
