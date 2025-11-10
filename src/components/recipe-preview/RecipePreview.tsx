@@ -1,6 +1,7 @@
 import "./recipe-preview.css";
 import { useMemo, useState } from "react";
 import { initialRecipes } from "../../assets/data/recipes/init.ts";
+import { Link } from "react-router-dom";
 
 export default function RecipePreviewCard() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,9 +48,9 @@ export default function RecipePreviewCard() {
             <h2 className="recipe-preview--letter">{letter}</h2>
             <div className="recipe-preview--list">
               {groupedRecipes[letter].map((recipe) => (
-                <div key={recipe.title} className="recipe-preview--card">
+                <Link to={`/recipe/${recipe.fileName}`} key={recipe.title} className="recipe-preview--card">
                   {recipe.title}
-                </div>
+                </Link>
               ))}
             </div>
           </div>

@@ -44,6 +44,7 @@ const ask = (q) =>
 
         const recipe = {
             title,
+            fileName,
             ingredients,
             instructions,
         };

@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "add-simple-recipe": " cd .\\src\\assets\\data\\recipes\\ && node add-recipe-cli.js"
+    "add-simple-recipe": " cd .\\src\\assets\\data\\recipes\\ && node add-recipe-cli.js",
+    "add-filename": " cd .\\src\\assets\\data\\recipes\\ && node add-filename.js"
   },
   "dependencies": {
     "react": "^19.2.0",
