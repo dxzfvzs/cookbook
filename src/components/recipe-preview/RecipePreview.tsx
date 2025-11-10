@@ -16,7 +16,7 @@ export default function RecipePreviewCard() {
   return (
     <div className="recipe-preview--wrapper">
       {sortedLetters.map((letter) => (
-        <div key={letter} className="recipe-preview--container">
+        <div key={letter} id={`letter-${letter}`} className="recipe-preview--container">
           <h2 className="recipe-preview--letter">{letter}</h2>
           <div className="recipe-preview--list">
             {groupedRecipes[letter].map((recipe) => (

@@ -5,14 +5,14 @@
 .recipe-preview--wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
   width: 100%;
-  margin-top: 1rem;
   padding-inline: 0.5rem;
+  margin-top: -1rem;
 }
 
 /* --- Letter group --- */
 .recipe-preview--container {
+  padding-top: 2rem;
   width: 100%;
 }
 
