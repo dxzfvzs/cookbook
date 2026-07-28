@@ -27,4 +27,15 @@
   --recipe-title-bcg: #2b2d31;
   --recipe-title-bcg-shade: #4f5050;
   --recipe-box-bcg: #d8d8d8;
+
+  --recipe-panel-bg: #f4f2ec;
+
+  --cat-icon-color: #fff;
+  
+  --cat-meat-bg: #facec7;
+  --cat-chicken-bg: #ecd0d4;
+  --cat-fish-bg: #c7dde8;
+  --cat-veggie-bg: #c1ddc1;
+  --cat-baking-bg: #e1d3bb;
+  --cat-sweet-bg: #e8dbe0;
 }

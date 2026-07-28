@@ -2,7 +2,8 @@ import "./recipe-preview.css";
 import { useMemo, useState } from "react";
 import { initialRecipes } from "../../assets/data/recipes/init.ts";
 import { Link } from "react-router-dom";
-import CategoryBadge from "../ui/category-icon/CategoryBadge.tsx";
+import CategorySegment from "../ui/category-icon/CategorySegment.tsx";
+import { categoryById } from "../../assets/data/categories.ts";
 
 export default function RecipePreviewCard() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,45 +30,55 @@ export default function RecipePreviewCard() {
   const sortedLetters = Object.keys(groupedRecipes).sort();
 
   return (
-      <div className="recipe-preview--wrapper">
-        <div className="recipe-preview--search">
-          <input
-            type="text"
-            placeholder="Search recipes or ingredients..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="recipe-preview--searchbar"
-          />
-        </div>
-        {/* Render grouped results */}
-        {sortedLetters.map((letter) => (
-          <div
-            key={letter}
-            id={`letter-${letter}`}
-            className="recipe-preview--container"
-          >
-            <h2 className="recipe-preview--letter">{letter}</h2>
-            <div className="recipe-preview--list">
-              {groupedRecipes[letter].map((recipe) => (
+    <div className="recipe-preview--wrapper">
+      <div className="recipe-preview--search">
+        <input
+          type="text"
+          placeholder="Search recipes or ingredients..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="recipe-preview--searchbar"
+        />
+      </div>
+      {/* Render grouped results */}
+      {sortedLetters.map((letter) => (
+        <div
+          key={letter}
+          id={`letter-${letter}`}
+          className="recipe-preview--container"
+        >
+          <h2 className="recipe-preview--letter">{letter}</h2>
+          <div className="recipe-preview--list">
+            {groupedRecipes[letter].map((recipe) => {
+              const mainCategory = recipe.categories?.[0];
+              return (
                 <Link to={`/recipe/${recipe.fileName}`} key={recipe.title} className="recipe-preview--card">
-                  <span className="recipe-preview--card-title">{recipe.title}</span>
                   {recipe.categories && recipe.categories.length > 0 && (
-                    <div className="recipe-preview--card-icons">
+                    <div className="recipe-preview--card-rail">
                       {recipe.categories.map((category) => (
-                        <CategoryBadge key={category} id={category} size={24} />
+                        <CategorySegment key={category} id={category}/>
                       ))}
                     </div>
                   )}
+                  <div
+                    className="recipe-preview--card-body"
+                    style={mainCategory ? { backgroundColor: categoryById[mainCategory].bgColor } : undefined}
+                  >
+                    <span className="recipe-preview--card-title">
+                      <span className="recipe-preview--card-title-text">{recipe.title}</span>
+                    </span>
+                  </div>
                 </Link>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        ))}
+        </div>
+      ))}
 
-        {/* If nothing matches */}
-        {sortedLetters.length === 0 && (
-          <p className="recipe-preview--no-results">No recipes found.</p>
-        )}
-      </div>
+      {/* If nothing matches */}
+      {sortedLetters.length === 0 && (
+        <p className="recipe-preview--no-results">No recipes found.</p>
+      )}
+    </div>
   );
 }

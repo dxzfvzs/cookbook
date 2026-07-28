@@ -1,8 +1,8 @@
-.category-badge {
-  display: inline-flex;
+.category-segment {
+  flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   color: var(--cat-icon-color, #fff);
-  flex-shrink: 0;
+  min-height: 2.2rem;
 }
