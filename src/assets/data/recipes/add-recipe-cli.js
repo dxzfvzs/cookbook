@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import readline from "readline";
+import { CATEGORIES } from "../categories.ts";
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -26,6 +27,15 @@ const ask = (q) =>
 
         const fileName = title.toLowerCase().replace(/\s+/g, "-") + ".json";
 
+        const knownCategories = CATEGORIES.map((c) => c.id);
+        const categoriesInput = await ask(
+            `\nCategories (comma separated, from: ${knownCategories.join(", ")}): `
+        );
+        const categories = categoriesInput
+            .split(",")
+            .map((c) => c.trim().toLowerCase())
+            .filter((c) => knownCategories.includes(c));
+
         const ingredients = [];
         console.log("\nEnter ingredients (press Enter on empty line to finish):");
         while (true) {
@@ -45,6 +55,7 @@ const ask = (q) =>
         const recipe = {
             title,
             fileName,
+            categories,
             ingredients,
             instructions,
         };
