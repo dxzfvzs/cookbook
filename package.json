@@ -12,6 +12,7 @@
     "add-filename": " cd .\\src\\assets\\data\\recipes\\ && node add-filename.js"
   },
   "dependencies": {
+    "lucide-react": "^1.27.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.5"

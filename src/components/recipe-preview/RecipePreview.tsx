@@ -2,6 +2,7 @@ import "./recipe-preview.css";
 import { useMemo, useState } from "react";
 import { initialRecipes } from "../../assets/data/recipes/init.ts";
 import { Link } from "react-router-dom";
+import CategoryBadge from "../ui/category-icon/CategoryBadge.tsx";
 
 export default function RecipePreviewCard() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,7 +50,14 @@ export default function RecipePreviewCard() {
             <div className="recipe-preview--list">
               {groupedRecipes[letter].map((recipe) => (
                 <Link to={`/recipe/${recipe.fileName}`} key={recipe.title} className="recipe-preview--card">
-                  {recipe.title}
+                  <span className="recipe-preview--card-title">{recipe.title}</span>
+                  {recipe.categories && recipe.categories.length > 0 && (
+                    <div className="recipe-preview--card-icons">
+                      {recipe.categories.map((category) => (
+                        <CategoryBadge key={category} id={category} size={24} />
+                      ))}
+                    </div>
+                  )}
                 </Link>
               ))}
             </div>

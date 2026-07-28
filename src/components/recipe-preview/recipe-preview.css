@@ -44,6 +44,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  justify-content: space-between;
   border-radius: var(--border-radius, 0.8rem);
   background: var(--card-bg, rgba(255, 255, 255, 0.4));
   backdrop-filter: blur(8px) saturate(160%);
@@ -81,6 +82,13 @@
   font-weight: 600;
   color: var(--text-main, #222);
   font-size: 0.95rem;
+}
+
+.recipe-preview--card-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
 }
 
 .recipe-preview--card-meta {
