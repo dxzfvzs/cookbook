@@ -1,8 +1,9 @@
 .category-segment {
-  flex: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--cat-icon-color, #fff);
-  min-height: 2.2rem;
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
 }

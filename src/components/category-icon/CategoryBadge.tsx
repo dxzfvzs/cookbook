@@ -1,6 +1,6 @@
 import "./category-badge.css"
 import CategoryIcon from "./CategoryIcon.tsx"
-import { categoryById, type CategoryId } from "../../../assets/data/categories.ts"
+import { categoryById, type CategoryId } from "../../assets/data/categories.ts"
 
 interface CategoryBadgeProps {
   id: CategoryId

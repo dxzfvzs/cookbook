@@ -1,84 +1,39 @@
 import "./recipe-preview.css";
-import { useMemo, useState } from "react";
-import { initialRecipes } from "../../assets/data/recipes/init.ts";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import CategorySegment from "../ui/category-icon/CategorySegment.tsx";
-import { categoryById } from "../../assets/data/categories.ts";
+import type { Recipe } from "../../assets/data/recipes/RecipeDto.ts";
+import CategorySegment from "../category-icon/CategorySegment.tsx";
 
-export default function RecipePreviewCard() {
+function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredRecipes = useMemo(() => {
-    const term = searchTerm.toLowerCase();
-    if (!term) return initialRecipes;
-    return initialRecipes.filter(
-      (recipe) =>
-        recipe.title.toLowerCase().includes(term) ||
-        recipe.ingredients.some((ing) => ing.toLowerCase().includes(term))
-    );
-  }, [searchTerm]);
-
-  const groupedRecipes = useMemo(() => {
-    return filteredRecipes.reduce((groups, recipe) => {
-      const firstLetter = recipe.title[0].toUpperCase();
-      if (!groups[firstLetter]) groups[firstLetter] = [];
-      groups[firstLetter].push(recipe);
-      return groups;
-    }, {} as Record<string, typeof initialRecipes>);
-  }, [filteredRecipes]);
-
-  const sortedLetters = Object.keys(groupedRecipes).sort();
-
   return (
-    <div className="recipe-preview--wrapper">
-      <div className="recipe-preview--search">
-        <input
-          type="text"
-          placeholder="Search recipes or ingredients..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="recipe-preview--searchbar"
-        />
-      </div>
-      {/* Render grouped results */}
-      {sortedLetters.map((letter) => (
-        <div
-          key={letter}
-          id={`letter-${letter}`}
-          className="recipe-preview--container"
-        >
-          <h2 className="recipe-preview--letter">{letter}</h2>
-          <div className="recipe-preview--list">
-            {groupedRecipes[letter].map((recipe) => {
-              const mainCategory = recipe.categories?.[0];
-              return (
-                <Link to={`/recipe/${recipe.fileName}`} key={recipe.title} className="recipe-preview--card">
-                  {recipe.categories && recipe.categories.length > 0 && (
-                    <div className="recipe-preview--card-rail">
-                      {recipe.categories.map((category) => (
-                        <CategorySegment key={category} id={category}/>
-                      ))}
-                    </div>
-                  )}
-                  <div
-                    className="recipe-preview--card-body"
-                    style={mainCategory ? { backgroundColor: categoryById[mainCategory].bgColor } : undefined}
-                  >
-                    <span className="recipe-preview--card-title">
-                      <span className="recipe-preview--card-title-text">{recipe.title}</span>
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      ))}
-
-      {/* If nothing matches */}
-      {sortedLetters.length === 0 && (
-        <p className="recipe-preview--no-results">No recipes found.</p>
-      )}
+    <div className="recipe-preview--search">
+      <input
+        type="text"
+        placeholder="Search recipes or ingredients..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="recipe-preview--searchbar"
+      />
     </div>
+  )
+}
+
+export default function RecipePreview({ recipe }: { recipe: Recipe }) {
+  return (
+    <Link to={`/recipe/${recipe.fileName}`} key={recipe.title} className="recipe-preview--card">
+
+      <div className="recipe-preview--card-title">
+        <span>{recipe.title}</span>
+      </div>
+
+      <div className={"recipe-preview--card-categories"}>
+        {recipe.categories?.map((category) => (
+          <CategorySegment key={category} id={category}/>
+        ))}
+      </div>
+
+    </Link>
   );
 }

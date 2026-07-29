@@ -1,5 +1,5 @@
 import { Beef, Drumstick, Fish, Broccoli, Croissant, CakeSlice } from "lucide-react"
-import type { CategoryId } from "../../../assets/data/categories.ts"
+import type { CategoryId } from "../../assets/data/categories.ts"
 
 interface CategoryIconProps {
   id: CategoryId
