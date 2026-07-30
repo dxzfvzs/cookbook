@@ -1,0 +1,28 @@
+.all-recipes {
+  display: grid;
+  grid-template-columns: 15em 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "search search"
+    "sidebar list";
+  gap: 1rem;
+  height: 100%;
+  min-height: 0;
+}
+
+.all-recipes--search {
+  grid-area: search;
+}
+
+@media (max-width: 768px) {
+  .all-recipes {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "search"
+      "sidebar"
+      "list";
+    height: auto;
+    min-height: 0;
+  }
+}

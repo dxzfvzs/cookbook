@@ -1,6 +1,7 @@
 :root {
   font-family: Metropolis, sans-serif;
   --border-radius: 10px;
+  --page-bg: #f3e8d6;
 }
 
 html, body, * {
@@ -20,13 +21,34 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
-  background: #f3e8d6;
+  background: var(--page-bg);
 }
 
 main {
-  height: fit-content;
-  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
   overflow: auto;
+  background: var(--page-bg);
+}
+
+.main-content {
+  width: 70%;
   margin: 1em auto;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .app-layout {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  main {
+    overflow: visible;
+  }
 }

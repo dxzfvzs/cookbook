@@ -1,16 +1,56 @@
 .recipe-preview--wrapper {
+  grid-area: list;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1rem 0.25rem 1rem 1rem;
   position: relative;
-  flex-grow: 1;
+  min-height: 0;
   border-radius: var(--border-radius, 0.8rem);
+  background: var(--recipe-panel-bg, #f4f2ec);
 }
 
 .recipe-preview--list {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex: 1;
+  min-height: 0;
+  overflow-y: scroll;
+  padding-right: 0.9rem;
+  scrollbar-width: thin;
+  scrollbar-color: #c9a876 transparent;
+}
+
+.recipe-preview--list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.recipe-preview--list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recipe-preview--list::-webkit-scrollbar-thumb {
+  background-color: #c9a876;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.recipe-preview--list::-webkit-scrollbar-thumb:hover {
+  background-color: #b8935e;
+}
+
+@media (max-width: 768px) {
+  .recipe-preview--wrapper {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .recipe-preview--list {
+    flex: none;
+    min-height: 60vh;
+    overflow-y: visible;
+    padding-right: 0;
+  }
 }
 
 .recipe-preview--card {
@@ -43,4 +83,5 @@
   color: #666;
   font-style: italic;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
