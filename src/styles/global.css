@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "dxzfvzs";
+  src: url("/fonts/dxzfvzs.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  font-family: Metropolis, sans-serif;
+  font-family: dxzfvzs, Metropolis, sans-serif;
   --border-radius: 10px;
   --page-bg: #f3e8d6;
 }
