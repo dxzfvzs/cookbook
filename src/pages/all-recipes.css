@@ -1,6 +1,6 @@
 .all-recipes {
   display: grid;
-  grid-template-columns: 15em 1fr;
+  grid-template-columns: 15em minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   grid-template-areas:
     "search search"
@@ -12,11 +12,17 @@
 
 .all-recipes--search {
   grid-area: search;
+  min-width: 0;
+}
+
+.category-sidebar,
+.recipe-preview--wrapper {
+  min-width: 0;
 }
 
 @media (max-width: 768px) {
   .all-recipes {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     grid-template-areas:
       "search"

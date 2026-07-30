@@ -6,6 +6,7 @@
   border: 1px solid var(--card-border, #e2e2e7);
   border-radius: var(--border-radius);
   padding: 0.6rem 1rem;
+  min-width: 0;
 }
 
 .search-bar--icon {
@@ -15,11 +16,15 @@
 
 .search-bar--input {
   flex: 1;
+  min-width: 0;
   border: none;
   outline: none;
   background: transparent;
   font-size: 1rem;
   color: var(--text-main, #222);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .search-bar--input::placeholder {

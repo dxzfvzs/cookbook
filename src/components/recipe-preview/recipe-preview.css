@@ -69,8 +69,7 @@
 .recipe-preview--card-title {
   display: flex;
   align-items: center;
-  flex: 0 0 90%;
-  width: 90%;
+  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -83,8 +82,10 @@
 
 .recipe-preview--card-categories {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   gap: 0.5em;
-  width: 3em;
+  flex: 0 0 4em;
 }
 
 .recipe-preview--no-results {
