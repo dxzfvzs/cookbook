@@ -63,13 +63,22 @@
   color: inherit;
   padding: 0.5em 1em;
   border-bottom: 2px solid #e4cebe;
+  min-width: 0;
 }
 
 .recipe-preview--card-title {
-  justify-content: center;
-  flex-grow: 1;
-  justify-self: center;
-  margin: auto;
+  display: flex;
+  align-items: center;
+  flex: 0 0 90%;
+  width: 90%;
+  min-width: 0;
+}
+
+.recipe-preview--card-title span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .recipe-preview--card-categories {
