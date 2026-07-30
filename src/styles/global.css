@@ -42,7 +42,8 @@ main {
 }
 
 .main-content {
-  width: 70%;
+  min-width: 60%;
+  max-width: 95%;
   margin: 1em auto;
   flex: 1;
   min-height: 0;
