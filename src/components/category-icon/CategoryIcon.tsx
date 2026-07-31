@@ -20,7 +20,7 @@ const icons = {
 
   vegetarian: Leaf,
   pescetarian: Fish,
-  unrestricted: Beef,
+  carnivore: Beef,
 } as const
 
 export default function CategoryIcon({ id, size = 16, className }: CategoryIconProps) {

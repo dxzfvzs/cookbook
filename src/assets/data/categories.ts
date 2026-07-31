@@ -3,7 +3,7 @@ export type CategoryGroupId = "outcome" | "type" | "diet"
 export type CategoryId =
   | "lunch" | "soup" | "snack" | "dessert" | "pastry" | "drink"
   | "savory" | "sweet"
-  | "vegetarian" | "pescetarian" | "unrestricted"
+  | "vegetarian" | "pescetarian" | "carnivore"
 
 export interface CategoryDefinition {
   id: CategoryId
@@ -37,7 +37,7 @@ export const CATEGORIES: CategoryDefinition[] = [
 
   { id: "vegetarian", label: "Vegetarian", color: "var(--cat-vegetarian)", group: "diet" },
   { id: "pescetarian", label: "Pescetarian", color: "var(--cat-pescetarian)", group: "diet", keywords: ["fish"] },
-  { id: "unrestricted", label: "Unrestricted", color: "var(--cat-unrestricted)", group: "diet" },
+  { id: "carnivore", label: "Carnivore", color: "var(--cat-carnivore)", group: "diet" },
 ]
 
 export const categoryById: Record<CategoryId, CategoryDefinition> = Object.fromEntries(

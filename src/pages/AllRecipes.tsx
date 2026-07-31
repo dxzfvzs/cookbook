@@ -43,7 +43,7 @@ export default function AllRecipes() {
         {filteredRecipes.length > 0 && (
           <div className="recipe-preview--list">
             {filteredRecipes.map((recipe) => (
-              <RecipePreview key={recipe.fileName} recipe={recipe}/>
+              <RecipePreview key={recipe.fileName} recipe={recipe} activeCategory={activeCategory}/>
             ))}
           </div>
         )}
