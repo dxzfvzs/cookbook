@@ -7,10 +7,10 @@ import { categoryById, type CategoryId } from "../../assets/data/categories.ts";
 
 interface RecipePreviewProps {
   recipe: Recipe
-  activeCategory?: CategoryId | null
+  activeCategories?: CategoryId[]
 }
 
-export default function RecipePreview({ recipe, activeCategory }: RecipePreviewProps) {
+export default function RecipePreview({ recipe, activeCategories = [] }: RecipePreviewProps) {
   const isSweet = recipe.categories?.includes("sweet") ?? false;
 
   return (
@@ -22,8 +22,8 @@ export default function RecipePreview({ recipe, activeCategory }: RecipePreviewP
 
       <div className={"recipe-preview--card-categories"}>
         {recipe.categories
-          ?.filter((category) => category === activeCategory || (category !== "carnivore" && category !== "savory"))
-          .filter((category) => category === activeCategory || !(isSweet && categoryById[category].group === "diet"))
+          ?.filter((category) => activeCategories.includes(category) || (category !== "carnivore" && category !== "savory"))
+          .filter((category) => activeCategories.includes(category) || !(isSweet && categoryById[category].group === "diet"))
           .sort((a, b) => Number(categoryById[a].group === "outcome") - Number(categoryById[b].group === "outcome"))
           .map((category) => (
             <CategorySegment key={category} id={category}/>

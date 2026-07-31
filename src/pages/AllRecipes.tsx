@@ -14,7 +14,16 @@ function categoryMatchesTerm(categoryId: CategoryId, term: string): boolean {
 
 export default function AllRecipes() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeCategory, setActiveCategory] = useState<CategoryId | null>(null);
+  const [activeCategories, setActiveCategories] = useState<CategoryId[]>([]);
+
+  const handleSelectCategory = (category: CategoryId, isMiddleClick: boolean) => {
+    setActiveCategories((prev) => {
+      if (isMiddleClick) {
+        return prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category];
+      }
+      return prev.length === 1 && prev[0] === category ? [] : [category];
+    });
+  };
 
   const filteredRecipes = useMemo(() => {
     const term = searchTerm.toLowerCase();
@@ -25,10 +34,11 @@ export default function AllRecipes() {
         recipe.ingredients.some((ing) => ing.toLowerCase().includes(term)) ||
         recipe.categories?.some((categoryId) => categoryMatchesTerm(categoryId, term));
       const matchesCategory =
-        !activeCategory || recipe.categories?.includes(activeCategory);
+        activeCategories.length === 0 ||
+        activeCategories.some((cat) => recipe.categories?.includes(cat));
       return matchesTerm && matchesCategory;
     });
-  }, [searchTerm, activeCategory]);
+  }, [searchTerm, activeCategories]);
 
   return (
     <div className="all-recipes">
@@ -37,13 +47,13 @@ export default function AllRecipes() {
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       </div>
 
-      <CategorySidebar activeCategory={activeCategory} onSelect={setActiveCategory}/>
+      <CategorySidebar activeCategories={activeCategories} onSelect={handleSelectCategory}/>
 
       <div className="recipe-preview--wrapper">
         {filteredRecipes.length > 0 && (
           <div className="recipe-preview--list">
             {filteredRecipes.map((recipe) => (
-              <RecipePreview key={recipe.fileName} recipe={recipe} activeCategory={activeCategory}/>
+              <RecipePreview key={recipe.fileName} recipe={recipe} activeCategories={activeCategories}/>
             ))}
           </div>
         )}

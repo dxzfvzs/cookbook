@@ -3,11 +3,11 @@ import { CATEGORY_GROUPS, categoriesByGroup, type CategoryId } from "../../asset
 import CategorySegment from "../category-icon/CategorySegment.tsx";
 
 interface CategorySidebarProps {
-  activeCategory: CategoryId | null;
-  onSelect: (category: CategoryId | null) => void;
+  activeCategories: CategoryId[];
+  onSelect: (category: CategoryId, isMiddleClick: boolean) => void;
 }
 
-export default function CategorySidebar({ activeCategory, onSelect }: CategorySidebarProps) {
+export default function CategorySidebar({ activeCategories, onSelect }: CategorySidebarProps) {
   return (
     <nav className="category-sidebar">
       <h2 className="uppercase category-sidebar--title">Browse Categories</h2>
@@ -22,11 +22,20 @@ export default function CategorySidebar({ activeCategory, onSelect }: CategorySi
                 <button
                   type="button"
                   className={
-                    activeCategory === category.id
+                    activeCategories.includes(category.id)
                       ? "category-sidebar--item category-sidebar--item-active"
                       : "category-sidebar--item"
                   }
-                  onClick={() => onSelect(activeCategory === category.id ? null : category.id)}
+                  onClick={() => onSelect(category.id, false)}
+                  onMouseDown={(e) => {
+                    if (e.button === 1) e.preventDefault();
+                  }}
+                  onAuxClick={(e) => {
+                    if (e.button === 1) {
+                      e.preventDefault();
+                      onSelect(category.id, true);
+                    }
+                  }}
                 >
                   <CategorySegment id={category.id}/>
                   <span>{category.label}</span>
