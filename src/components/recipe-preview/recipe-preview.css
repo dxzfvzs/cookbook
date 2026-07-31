@@ -9,6 +9,11 @@
   background: var(--recipe-panel-bg, #f4f2ec);
 }
 
+.recipe-preview--headline {
+  margin: 0 1.25em 2em;
+  border-bottom: 2px solid #ede1d8;
+}
+
 .recipe-preview--list {
   display: flex;
   flex-direction: column;
@@ -64,6 +69,14 @@
   padding: 0.5em 1em;
   border-bottom: 2px solid #e4cebe;
   min-width: 0;
+}
+
+.recipe-preview--card:hover {
+  background: var(--hover-bg);
+}
+
+.recipe-preview--card:first-child {
+  border-radius: var(--border-radius, 0.8rem) var(--border-radius, 0.8rem) 0 0;
 }
 
 .recipe-preview--card-title {

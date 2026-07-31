@@ -1,6 +1,6 @@
 import "./category-sidebar.css";
 import { CATEGORIES, type CategoryId } from "../../assets/data/categories.ts";
-import CategoryBadge from "../category-icon/CategoryBadge.tsx";
+import CategorySegment from "../category-icon/CategorySegment.tsx";
 
 interface CategorySidebarProps {
   activeCategory: CategoryId | null;
@@ -10,7 +10,10 @@ interface CategorySidebarProps {
 export default function CategorySidebar({ activeCategory, onSelect }: CategorySidebarProps) {
   return (
     <nav className="category-sidebar">
-      <h2 className="category-sidebar--title">Browse Categories</h2>
+      <h2 className="uppercase category-sidebar--title">Browse Categories</h2>
+
+      <h3 className="uppercase category-sidebar--subtitle">By Outcome</h3>
+
       <ul className="category-sidebar--list">
         {CATEGORIES.map((category) => (
           <li key={category.id}>
@@ -23,7 +26,7 @@ export default function CategorySidebar({ activeCategory, onSelect }: CategorySi
               }
               onClick={() => onSelect(activeCategory === category.id ? null : category.id)}
             >
-              <CategoryBadge id={category.id} size={22} />
+              <CategorySegment id={category.id}/>
               <span>{category.label}</span>
             </button>
           </li>
