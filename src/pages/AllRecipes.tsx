@@ -4,7 +4,7 @@ import { initialRecipes } from "../assets/data/recipes/init.ts";
 import RecipePreview from "../components/recipe-preview/RecipePreview.tsx";
 import SearchBar from "../components/search/SearchBar.tsx";
 import CategorySidebar from "../components/category-sidebar/CategorySidebar.tsx";
-import { categoryById, type CategoryId } from "../assets/data/categories.ts";
+import { categoryById, type CategoryGroupId, type CategoryId } from "../assets/data/categories.ts";
 
 function categoryMatchesTerm(categoryId: CategoryId, term: string): boolean {
   const category = categoryById[categoryId];
@@ -25,6 +25,15 @@ export default function AllRecipes() {
     });
   };
 
+  const activeCategoriesByGroup = useMemo(() => {
+    const groups = new Map<CategoryGroupId, CategoryId[]>();
+    for (const cat of activeCategories) {
+      const group = categoryById[cat].group;
+      groups.set(group, [...(groups.get(group) ?? []), cat]);
+    }
+    return [...groups.values()];
+  }, [activeCategories]);
+
   const filteredRecipes = useMemo(() => {
     const term = searchTerm.toLowerCase();
     return initialRecipes.filter((recipe) => {
@@ -33,12 +42,12 @@ export default function AllRecipes() {
         recipe.title.toLowerCase().includes(term) ||
         recipe.ingredients.some((ing) => ing.toLowerCase().includes(term)) ||
         recipe.categories?.some((categoryId) => categoryMatchesTerm(categoryId, term));
-      const matchesCategory =
-        activeCategories.length === 0 ||
-        activeCategories.some((cat) => recipe.categories?.includes(cat));
+      const matchesCategory = activeCategoriesByGroup.every((group) =>
+        group.some((cat) => recipe.categories?.includes(cat))
+      );
       return matchesTerm && matchesCategory;
     });
-  }, [searchTerm, activeCategories]);
+  }, [searchTerm, activeCategoriesByGroup]);
 
   return (
     <div className="all-recipes">
