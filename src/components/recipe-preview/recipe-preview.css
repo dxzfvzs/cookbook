@@ -59,7 +59,8 @@
 }
 
 .recipe-preview--card {
-  min-height: 2.6em;
+  height: 2.6em;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
