@@ -10,6 +10,7 @@ export interface CategoryDefinition {
   label: string
   color: string
   group: CategoryGroupId
+  keywords?: string[]
 }
 
 export interface CategoryGroupDefinition {
@@ -35,7 +36,7 @@ export const CATEGORIES: CategoryDefinition[] = [
   { id: "sweet", label: "Sweet", color: "var(--cat-sweet)", group: "type" },
 
   { id: "vegetarian", label: "Vegetarian", color: "var(--cat-vegetarian)", group: "diet" },
-  { id: "pescetarian", label: "Pescetarian", color: "var(--cat-pescetarian)", group: "diet" },
+  { id: "pescetarian", label: "Pescetarian", color: "var(--cat-pescetarian)", group: "diet", keywords: ["fish"] },
   { id: "unrestricted", label: "Unrestricted", color: "var(--cat-unrestricted)", group: "diet" },
 ]
 

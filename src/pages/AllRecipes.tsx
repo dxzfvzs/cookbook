@@ -4,7 +4,13 @@ import { initialRecipes } from "../assets/data/recipes/init.ts";
 import RecipePreview from "../components/recipe-preview/RecipePreview.tsx";
 import SearchBar from "../components/search/SearchBar.tsx";
 import CategorySidebar from "../components/category-sidebar/CategorySidebar.tsx";
-import type { CategoryId } from "../assets/data/categories.ts";
+import { categoryById, type CategoryId } from "../assets/data/categories.ts";
+
+function categoryMatchesTerm(categoryId: CategoryId, term: string): boolean {
+  const category = categoryById[categoryId];
+  const names = [category.label.toLowerCase(), ...(category.keywords ?? [])];
+  return names.some((name) => name.includes(term) || term.includes(name));
+}
 
 export default function AllRecipes() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,7 +22,8 @@ export default function AllRecipes() {
       const matchesTerm =
         !term ||
         recipe.title.toLowerCase().includes(term) ||
-        recipe.ingredients.some((ing) => ing.toLowerCase().includes(term));
+        recipe.ingredients.some((ing) => ing.toLowerCase().includes(term)) ||
+        recipe.categories?.some((categoryId) => categoryMatchesTerm(categoryId, term));
       const matchesCategory =
         !activeCategory || recipe.categories?.includes(activeCategory);
       return matchesTerm && matchesCategory;
