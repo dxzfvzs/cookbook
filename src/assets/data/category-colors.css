@@ -1,8 +1,18 @@
 :root {
-  --cat-meat: #b5432f;
-  --cat-chicken: #c17b8e;
-  --cat-fish: #35657f;
-  --cat-veggie: #5c8a3a;
-  --cat-baking: #b9905a;
-  --cat-sweet: #9c3d63;
+  /* Outcome */
+  --cat-soup: #cc4b36;
+  --cat-snack: #dd7939;
+  --cat-lunch: #e5a238;
+  --cat-pastry: #b9905a;
+  --cat-dessert: #a06f99;
+  --cat-drink: #5582b4;
+
+  /* Type */
+  --cat-savory: #79aa45;
+  --cat-sweet: #c67591;
+
+  /* Diet */
+  --cat-vegetarian: #8aa85c;
+  --cat-pescetarian: #509791;
+  --cat-unrestricted: #d4613b;
 }
