@@ -241,6 +241,49 @@ for row, chars in LAYOUT:
         os.remove(tmp)
 
 
+# ---------------- KERNING ----------------
+
+ALL_LETTERS = {ch for _, chars in LAYOUT for ch in chars if ch.isalpha()}
+ALL_LOWERCASE_LETTERS = {ch for ch in ALL_LETTERS if ch.islower()}
+
+KERNING_RULES = [
+    (ALL_LETTERS, {"j"}, -50),
+    ({"l", "g"}, ALL_LETTERS, -50),
+    ({"T", "P"}, ALL_LOWERCASE_LETTERS, -50),
+    ({"n"}, ALL_LETTERS, 50),
+    ({"d"}, {"l"}, 50),
+    ({"j"}, {"m"}, 50),
+    ({"f"}, {"f"}, -50),
+    ({"p"}, {"p"}, -50),
+    ({"e"}, {"f"}, -50),
+]
+
+
+def apply_kerning_rules():
+    lookup = "kernLookup"
+    subtable = "kernSubtable"
+    font.addLookup(lookup, "gpos_pair", (), (("kern", (("latn", ("dflt",)),)),))
+    font.addLookupSubtable(lookup, subtable)
+
+    seen_pairs = set()
+    for lefts, rights, value in KERNING_RULES:
+        for left in lefts:
+            for right in rights:
+                if ord(left) not in built_codepoints or ord(right) not in built_codepoints:
+                    continue
+                if (left, right) in seen_pairs:
+                    continue
+                seen_pairs.add((left, right))
+                left_glyph = font[ord(left)]
+                right_glyph = font[ord(right)]
+                left_glyph.addPosSub(
+                    subtable, right_glyph.glyphname, 0, 0, value, 0, 0, 0, 0, 0
+                )
+
+
+apply_kerning_rules()
+
+
 # space
 space = font.createChar(32, "space")
 space.width = 320
