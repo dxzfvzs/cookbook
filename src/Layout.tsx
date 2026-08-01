@@ -8,7 +8,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="app-layout">
       <main>
-        <div className="main-content">
+        <div className="main-content shadow">
           {children}
         </div>
       </main>

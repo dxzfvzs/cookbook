@@ -6,7 +6,7 @@
   position: relative;
   min-height: 0;
   border-radius: var(--border-radius, 0.8rem);
-  background: var(--recipe-panel-bg, #f4f2ec);
+  background: var(--panel-bg, #f4f2ec);
 }
 
 .recipe-preview--headline {
@@ -22,7 +22,7 @@
   overflow-y: scroll;
   padding-right: 0.9rem;
   scrollbar-width: thin;
-  scrollbar-color: #c9a876 transparent;
+  scrollbar-color: #e6d0b0 transparent;
 }
 
 .recipe-preview--list::-webkit-scrollbar {
@@ -34,14 +34,14 @@
 }
 
 .recipe-preview--list::-webkit-scrollbar-thumb {
-  background-color: #c9a876;
+  background-color: #ddc5a2;
   border-radius: 8px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
 
 .recipe-preview--list::-webkit-scrollbar-thumb:hover {
-  background-color: #b8935e;
+  background-color: #d5ba94;
 }
 
 @media (max-width: 768px) {

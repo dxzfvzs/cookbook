@@ -13,7 +13,7 @@ export default function CategorySidebar({ activeCategories, onSelect }: Category
       <h2 className="uppercase category-sidebar--title">Browse Categories</h2>
 
       {CATEGORY_GROUPS.map((group) => (
-        <div key={group.id}>
+        <div key={group.id} className="category-group">
           <h3 className="uppercase category-sidebar--subtitle">{group.label}</h3>
 
           <ul className="category-sidebar--list">

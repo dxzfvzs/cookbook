@@ -1,9 +1,11 @@
 .category-sidebar {
   grid-area: sidebar;
   align-self: start;
-  background: var(--recipe-panel-bg, #f4f2ec);
+  background: rgb(255 255 255 / 0.2);
+  
   border-radius: var(--border-radius);
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .category-sidebar--title {
@@ -13,6 +15,11 @@
 .category-sidebar--subtitle {
   margin-left: 0.5em;
   margin-bottom: 0.5em;
+}
+
+.category-group:not(:first-of-type) {
+  border-top: 2px solid #eddcc4;
+  padding-top: 1em;
 }
 
 .category-sidebar--list {
