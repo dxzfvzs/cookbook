@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--panel-bg, #f9f9fb);
-  border: 1px solid var(--card-border, #e2e2e7);
+  background: var(--panel-bg);
+  border: 1px solid var(--card-border);
   border-radius: var(--border-radius);
   padding: 0.6rem 1rem;
   min-width: 0;
@@ -11,7 +11,7 @@
 
 .search-bar--icon {
   flex-shrink: 0;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .search-bar--input {
@@ -21,7 +21,7 @@
   outline: none;
   background: transparent;
   font-size: 1rem;
-  color: var(--text-main, #222);
+  color: var(--text-main);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

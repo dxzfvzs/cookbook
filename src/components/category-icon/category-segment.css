@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--cat-icon-color, #fff);
+  color: var(--cat-icon-color);
   padding: 5px;
   border-radius: 5px;
   width: fit-content;

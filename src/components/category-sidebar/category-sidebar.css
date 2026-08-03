@@ -18,7 +18,7 @@
 }
 
 .category-group:not(:first-of-type) {
-  border-top: 2px solid #eddcc4;
+  border-top: 2px solid var(--divider);
   padding-top: 1em;
 }
 
@@ -45,11 +45,11 @@
 }
 
 .category-sidebar--item:not(.category-sidebar--item-active):hover {
-  background: var(--hover-bg, #e4e4e8);
+  background: var(--hover-bg);
 }
 
 .category-sidebar--item-active {
-  background: var(--sidebar-active-bg, #2b2d31);
+  background: var(--sidebar-active-bg);
 }
 
 @media (max-width: 768px) {

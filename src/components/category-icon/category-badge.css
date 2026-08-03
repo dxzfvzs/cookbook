@@ -3,6 +3,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: var(--cat-icon-color, #fff);
+  color: var(--cat-icon-color);
   flex-shrink: 0;
 }

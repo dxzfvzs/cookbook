@@ -1,0 +1,30 @@
+:root {
+  /* Page & panels */
+  --page-bg: #efe1ca;
+  --panel-bg: #f4f2ec;
+  --card-bg: #f9f9fb;
+  --card-border: #e2e2e7;
+  --accent: #d0d0d5;
+
+  /* Text */
+  --text-main: #222;
+  --text-strong: #111;
+  --text-muted: #666;
+
+  /* Recipe title banner */
+  --recipe-title-bg: #2b2d31;
+  --recipe-title-bg-shade: #4f5050;
+  --recipe-title-text: #f3f3f3;
+
+  /* Sidebar & hover states */
+  --hover-bg: #e8e3d5;
+  --sidebar-active-bg: #dcd2b6;
+
+  /* Dividers & scrollbar */
+  --divider: #e4cebe;
+  --scrollbar-track: #e6d0b0;
+  --scrollbar-thumb: #ddc5a2;
+  --scrollbar-thumb-hover: #d5ba94;
+
+  --cat-icon-color: #fff;
+}

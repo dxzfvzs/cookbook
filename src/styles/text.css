@@ -1,14 +1,14 @@
 h2 {
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  color: var(--text-muted, #666);
+  color: var(--text-muted);
   margin-bottom: 0.75rem;
 }
 
 h3 {
   font-size: 0.7rem;
   letter-spacing: 0.04em;
-  color: var(--text-muted, #666);
+  color: var(--text-muted);
   margin-bottom: 0.75rem;
 }
 
