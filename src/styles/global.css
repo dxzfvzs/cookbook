@@ -63,7 +63,7 @@ main::before {
   max-width: 95%;
   margin: 1em auto;
   flex: 1;
-  min-height: 0;
+  min-height: 52em;
   display: flex;
   flex-direction: column;
   padding: 1em;
