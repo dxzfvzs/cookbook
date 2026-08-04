@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Heart } from "lucide-react";
 import { initialRecipes } from "../assets/data/recipes/init.ts";
 import "./recipepage.css"
 import CategorySegment from "../components/category-icon/CategorySegment.tsx";
@@ -18,6 +19,11 @@ const RecipePage: React.FC = () => {
           ))}
         </div>
         <h1 className="">{recipe.title}</h1>
+        <div className="recipe-title-divider" aria-hidden="true">
+          <span className="recipe-title-divider-line" />
+          <Heart className="recipe-title-divider-heart" size={18} fill="currentColor" />
+          <span className="recipe-title-divider-line" />
+        </div>
       </div>
       <aside className="recipe--ingredients panel panel--translucent">
         <h2 className="uppercase">Ingredients</h2>

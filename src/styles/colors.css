@@ -2,6 +2,7 @@
   /* Page & panels */
   --page-bg: #efe1ca;
   --panel-bg: #f4f2ec;
+  --panel-bg--paper: #eae6db;
   --card-bg: #f9f9fb;
   --card-border: #e2e2e7;
   --panel-bg-translucent: rgb(255 255 255 / 0.2);
@@ -22,7 +23,7 @@
   --sidebar-active-bg: #dcd2b6;
 
   /* Dividers & scrollbar */
-  --divider: #e4cebe;
+  --divider: #ddc3b1;
   --scrollbar-track: #e6d0b0;
   --scrollbar-thumb: #ddc5a2;
   --scrollbar-thumb-hover: #d5ba94;

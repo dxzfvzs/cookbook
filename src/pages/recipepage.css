@@ -25,6 +25,10 @@
   text-align: center;
 }
 
+.recipe-title h1 {
+  margin-bottom: 0.25rem;
+}
+
 .recipe-title-categories {
   display: flex;
   gap: 1rem;
@@ -32,6 +36,26 @@
   width: fit-content;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.recipe-title-divider {
+  display: flex;
+  align-items: center;
+  width: 35%;
+  min-width: 12em;
+  margin: 0.25em auto 1em;
+}
+
+.recipe-title-divider-line {
+  flex: 1;
+  height: 3px;
+  background-color: var(--divider);
+}
+
+.recipe-title-divider-heart {
+  color: var(--cat-carnivore);
+  margin: 0 0.5em;
+  flex-shrink: 0;
 }
 
 /* Lists */
