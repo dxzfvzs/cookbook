@@ -37,7 +37,7 @@ export default function CategorySidebar({ activeCategories, onSelect }: Category
                     }
                   }}
                 >
-                  <CategorySegment id={category.id}/>
+                  <CategorySegment categoryId={category.id}/>
                   <span>{category.label}</span>
                 </button>
               </li>

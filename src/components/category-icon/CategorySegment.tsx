@@ -3,13 +3,14 @@ import CategoryIcon from "./CategoryIcon.tsx"
 import { categoryById, type CategoryId } from "../../assets/data/categories.ts"
 
 interface CategorySegmentProps {
-  id: CategoryId
+  categoryId: CategoryId
   iconSize?: number
   className?: string
+  showLabel?: boolean
 }
 
-export default function CategorySegment({ id, className }: CategorySegmentProps) {
-  const category = categoryById[id]
+export default function CategorySegment({ categoryId, className, showLabel, iconSize}: CategorySegmentProps) {
+  const category = categoryById[categoryId]
 
   return (
     <span
@@ -17,7 +18,10 @@ export default function CategorySegment({ id, className }: CategorySegmentProps)
       style={{ backgroundColor: category.color }}
       title={category.label}
     >
-      <CategoryIcon id={id}/>
+      <CategoryIcon id={categoryId} size={iconSize}/>
+      {showLabel && (
+        <span className={"category-segment--label uppercase"}>{categoryId}</span>
+      )}
     </span>
   )
 }

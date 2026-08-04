@@ -7,3 +7,9 @@
   border-radius: 5px;
   width: fit-content;
 }
+
+.category-segment--label {
+  margin: auto 0.6em;
+  font-size: 12px;
+  font-weight: bold;
+}

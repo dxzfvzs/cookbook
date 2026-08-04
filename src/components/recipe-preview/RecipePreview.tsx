@@ -26,7 +26,7 @@ export default function RecipePreview({ recipe, activeCategories = [] }: RecipeP
           .filter((category) => activeCategories.includes(category) || !(isSweet && categoryById[category].group === "diet"))
           .sort((a, b) => Number(categoryById[a].group === "outcome") - Number(categoryById[b].group === "outcome"))
           .map((category) => (
-            <CategorySegment key={category} id={category}/>
+            <CategorySegment key={category} categoryId={category}/>
           ))}
       </div>
 

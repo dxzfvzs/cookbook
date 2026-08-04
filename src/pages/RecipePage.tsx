@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { initialRecipes } from "../assets/data/recipes/init.ts";
 import "./recipepage.css"
+import CategorySegment from "../components/category-icon/CategorySegment.tsx";
 
 const RecipePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -11,6 +12,11 @@ const RecipePage: React.FC = () => {
   return (
     <div className="recipe-page">
       <div className="recipe-title">
+        <div className="recipe-title-categories">
+          {recipe.categories?.map((category) => (
+            <CategorySegment key={category} categoryId={category} showLabel={true} iconSize={22}/>
+          ))}
+        </div>
         <h1 className="">{recipe.title}</h1>
       </div>
       <aside className="recipe--ingredients panel panel--translucent">

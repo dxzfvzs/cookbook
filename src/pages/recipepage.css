@@ -12,10 +12,19 @@
 
 .recipe-title {
   grid-area: title;
-  background: linear-gradient(90deg, var(--recipe-title-bg), var(--recipe-title-bg-shade));
   color: var(--recipe-title-text);
-  padding: 1.2em 1.5em;
+  padding: 0 1.5em;
   border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.recipe-title-categories {
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto 1em auto;
+  width: fit-content;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Lists */
