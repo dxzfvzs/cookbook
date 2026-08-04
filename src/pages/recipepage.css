@@ -1,19 +1,17 @@
 .recipe-page {
   display: grid;
   grid-template-columns: 20em minmax(0, 1fr);
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas:
     "title title"
     "ingredients instructions";
   gap: 1rem;
-  height: 100%;
-  min-height: 0;
 }
 
 .recipe-title {
   grid-area: title;
   color: var(--recipe-title-text);
-  padding: 0 1.5em;
+  padding: 1em 1.5em 0.25em;
   border-radius: var(--border-radius);
   text-align: center;
 }
@@ -47,30 +45,17 @@
   align-self: start;
   display: flex;
   flex-direction: column;
-  min-height: 0;
-}
-
-.recipe--ingredients-list {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  padding-right: 0.9rem;
 }
 
 .recipe--instructions {
   grid-area: instructions;
   display: flex;
   flex-direction: column;
-  min-height: 0;
   min-width: 0;
 }
 
 .recipe--instructions-list {
-  flex: 1;
   min-width: 0;
-  min-height: 0;
-  overflow-y: auto;
-  padding-right: 0.9rem;
 }
 
 .recipe--instructions-list li {
@@ -85,13 +70,5 @@
       "title"
       "ingredients"
       "instructions";
-    height: auto;
-    min-height: 0;
-  }
-
-  .recipe--instructions-list,
-  .recipe--ingredients-list {
-    overflow-y: visible;
-    padding-right: 0;
   }
 }

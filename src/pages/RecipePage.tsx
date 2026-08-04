@@ -21,7 +21,7 @@ const RecipePage: React.FC = () => {
       </div>
       <aside className="recipe--ingredients panel panel--translucent">
         <h2 className="uppercase">Ingredients</h2>
-        <ul className="recipe--ingredients-list scroll-list">
+        <ul className="recipe--ingredients-list">
           {recipe.ingredients.map((i, idx) => (
             <li key={idx}>{i}</li>
           ))}
@@ -29,7 +29,7 @@ const RecipePage: React.FC = () => {
       </aside>
       <div className="recipe--instructions panel panel--solid">
         <h2 className="uppercase">Instructions</h2>
-        <ol className="recipe--instructions-list scroll-list">
+        <ol className="recipe--instructions-list">
           {recipe.instructions.map((i, idx) => (
             <li key={idx}>{i}</li>
           ))}
