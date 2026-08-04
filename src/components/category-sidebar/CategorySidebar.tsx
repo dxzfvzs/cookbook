@@ -9,7 +9,7 @@ interface CategorySidebarProps {
 
 export default function CategorySidebar({ activeCategories, onSelect }: CategorySidebarProps) {
   return (
-    <nav className="category-sidebar">
+    <nav className="category-sidebar panel panel--translucent">
       <h2 className="uppercase category-sidebar--title">Browse Categories</h2>
 
       {CATEGORY_GROUPS.map((group) => (

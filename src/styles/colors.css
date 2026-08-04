@@ -4,6 +4,7 @@
   --panel-bg: #f4f2ec;
   --card-bg: #f9f9fb;
   --card-border: #e2e2e7;
+  --panel-bg-translucent: rgb(255 255 255 / 0.2);
   --accent: #d0d0d5;
 
   /* Text */

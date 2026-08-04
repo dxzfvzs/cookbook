@@ -1,34 +1,21 @@
-.recipe {
-  display: flex;
-  width: 100%;
-  gap: 1em;
-  flex-wrap: wrap;
+.recipe-page {
+  display: grid;
+  grid-template-columns: 20em minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "title title"
+    "ingredients instructions";
+  gap: 1rem;
+  height: 100%;
+  min-height: 0;
 }
 
 .recipe-title {
-  width: 100%;
+  grid-area: title;
   background: linear-gradient(90deg, var(--recipe-title-bg), var(--recipe-title-bg-shade));
   color: var(--recipe-title-text);
   padding: 1.2em 1.5em;
   border-radius: var(--border-radius);
-  margin-bottom: 1em;
-}
-
-/* Shared box styles */
-.recipe--box {
-  flex: 1 1 300px;
-  border-radius: var(--border-radius);
-  background: var(--card-bg);
-  border: 1px solid rgba(226, 226, 231, 0.5);
-  padding: 1.2em;
-}
-
-/* Subtitles */
-.recipe--subtitle {
-  color: var(--text-strong);
-  margin-bottom: 0.8em;
-  padding-bottom: 0.8em;
-  border-bottom: 2px solid var(--accent);
 }
 
 /* Lists */
@@ -39,7 +26,6 @@
 }
 
 .recipe--instructions li {
-  list-style: none;
   margin-bottom: 0.6em;
 }
 
@@ -48,11 +34,55 @@
 }
 
 .recipe--ingredients {
-  background: var(--card-bg);
-  flex-grow: 1;
+  grid-area: ingredients;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.recipe--ingredients-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.9rem;
 }
 
 .recipe--instructions {
-  flex-grow: 10;
-  background: var(--card-bg);
+  grid-area: instructions;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+
+.recipe--instructions-list {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.9rem;
+}
+
+.recipe--instructions-list li {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .recipe-page {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "title"
+      "ingredients"
+      "instructions";
+    height: auto;
+    min-height: 0;
+  }
+
+  .recipe--instructions-list,
+  .recipe--ingredients-list {
+    overflow-y: visible;
+    padding-right: 0;
+  }
 }

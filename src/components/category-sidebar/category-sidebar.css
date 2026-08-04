@@ -1,11 +1,6 @@
 .category-sidebar {
   grid-area: sidebar;
   align-self: start;
-  background: rgb(255 255 255 / 0.2);
-  
-  border-radius: var(--border-radius);
-  padding: 1rem;
-  box-sizing: border-box;
 }
 
 .category-sidebar--title {

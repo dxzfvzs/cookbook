@@ -58,9 +58,9 @@ export default function AllRecipes() {
 
       <CategorySidebar activeCategories={activeCategories} onSelect={handleSelectCategory}/>
 
-      <div className="recipe-preview--wrapper">
+      <div className="recipe-preview--wrapper panel panel--solid">
         {filteredRecipes.length > 0 && (
-          <div className="recipe-preview--list">
+          <div className="recipe-preview--list scroll-list">
             {filteredRecipes.map((recipe) => (
               <RecipePreview key={recipe.fileName} recipe={recipe} activeCategories={activeCategories}/>
             ))}

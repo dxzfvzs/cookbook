@@ -9,25 +9,25 @@ const RecipePage: React.FC = () => {
   if (!recipe) return <p>Recipe {id} not found.</p>;
 
   return (
-    <div className="main-content">
+    <div className="recipe-page">
       <div className="recipe-title">
         <h1 className="">{recipe.title}</h1>
       </div>
-      <div className="recipe">
-        <div className="recipe--box recipe--ingredients">
-          <h2 className="recipe--subtitle">Ingredients</h2>
-          <ul className="list-disc ml-5">
-            {recipe.ingredients.map((i, idx) => (
-              <li key={idx}>{i}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="recipe--box recipe--instructions">
-          <h2 className="recipe--subtitle">Instructions</h2>
+      <aside className="recipe--ingredients panel panel--translucent">
+        <h2 className="uppercase">Ingredients</h2>
+        <ul className="recipe--ingredients-list scroll-list">
+          {recipe.ingredients.map((i, idx) => (
+            <li key={idx}>{i}</li>
+          ))}
+        </ul>
+      </aside>
+      <div className="recipe--instructions panel panel--solid">
+        <h2 className="uppercase">Instructions</h2>
+        <ol className="recipe--instructions-list scroll-list">
           {recipe.instructions.map((i, idx) => (
             <li key={idx}>{i}</li>
           ))}
-        </div>
+        </ol>
       </div>
     </div>
   );

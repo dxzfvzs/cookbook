@@ -59,8 +59,7 @@ main::before {
 }
 
 .main-content {
-  min-width: 60%;
-  max-width: 95%;
+  width: max(60%, min(95%, 60rem));
   margin: 1em auto;
   flex: 1;
   min-height: 52em;
@@ -73,6 +72,44 @@ main::before {
 
 .shadow {
   box-shadow: 5px 5px 5px 1px rgb(143 113 40 / 0.1);
+}
+
+.panel {
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+.panel--translucent {
+  background: var(--panel-bg-translucent);
+}
+
+.panel--solid {
+  background: var(--panel-bg);
+  padding: 1rem 0.25rem 1rem 1rem;
+}
+
+.scroll-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-track) transparent;
+}
+
+.scroll-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.scroll-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
 }
 
 @media (max-width: 768px) {
