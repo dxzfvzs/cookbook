@@ -27,9 +27,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="app-layout">
       <main>
-        {recipeMatch && <RecipeNav prevRecipe={prevRecipe} nextRecipe={nextRecipe} />}
-        <div className="main-content shadow">
-          {children}
+        <div className={`main-scroll${recipeMatch ? ' main-scroll--recipe' : ''}`}>
+          {recipeMatch && <RecipeNav prevRecipe={prevRecipe} nextRecipe={nextRecipe} />}
+          <div className={`main-content shadow${recipeMatch ? ' main-content--recipe' : ''}`}>
+            {children}
+          </div>
         </div>
       </main>
     </div>
