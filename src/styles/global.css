@@ -55,7 +55,7 @@ main::before {
   z-index: -1;
   pointer-events: none;
   opacity: 0.15;
-  background-image: url("tileoverlay.png"), url("tileoverlay.png");
+  background-image: url("/tileoverlay.png"), url("/tileoverlay.png");
   background-repeat: repeat, repeat;
   background-size: 220px 220px, 170px 170px;
   background-position: 0 0, 130px 170px;
