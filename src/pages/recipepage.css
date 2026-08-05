@@ -88,6 +88,37 @@
   background: var(--card-title-bg--darker);
 }
 
+.recipe--ingredient-note {
+  font-size: 0.7em;
+  opacity: 0.8;
+}
+
+.recipe--ingredients-section {
+  margin-bottom: 1em;
+}
+
+.recipe--ingredients-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 0.75em;
+}
+
+.recipe--ingredients-section-title {
+  background-color: var(--card-title-bg);
+  color: var(--recipe-title-text);
+  padding: 0.3em 0.8em;
+  border-radius: 0.6em;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+.recipe--ingredients-section-line {
+  flex: 1;
+  height: 3px;
+  background-color: var(--divider);
+}
+
 .recipe--ingredients {
   grid-area: ingredients;
   display: flex;
