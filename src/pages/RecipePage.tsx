@@ -2,14 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { initialRecipes } from "../assets/data/recipes/init.ts";
-import type { IngredientSection } from "../assets/data/recipes/RecipeDto.ts";
+import { isIngredientSections } from "../assets/data/recipes/RecipeDto.ts";
 import "./recipepage.css"
 import CategorySegment from "../components/category-icon/CategorySegment.tsx";
-
-const isIngredientSections = (
-  ingredients: string[] | IngredientSection[]
-): ingredients is IngredientSection[] =>
-  ingredients.length > 0 && typeof ingredients[0] !== "string";
 
 const IngredientText: React.FC<{ text: string }> = ({ text }) => {
   const noteStart = text.indexOf("(");

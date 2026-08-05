@@ -13,3 +13,11 @@ export type Recipe = {
   notes?: string[],
   fileName: string,
 }
+
+export const isIngredientSections = (
+  ingredients: string[] | IngredientSection[]
+): ingredients is IngredientSection[] =>
+  ingredients.length > 0 && typeof ingredients[0] !== "string";
+
+export const flattenIngredients = (ingredients: string[] | IngredientSection[]): string[] =>
+  isIngredientSections(ingredients) ? ingredients.flatMap((section) => section.items) : ingredients;

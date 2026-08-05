@@ -5,6 +5,7 @@ import RecipePreview from "../components/recipe-preview/RecipePreview.tsx";
 import SearchBar from "../components/search/SearchBar.tsx";
 import CategorySidebar from "../components/category-sidebar/CategorySidebar.tsx";
 import { categoryById, type CategoryGroupId, type CategoryId } from "../assets/data/categories.ts";
+import { flattenIngredients } from "../assets/data/recipes/RecipeDto.ts";
 
 function categoryMatchesTerm(categoryId: CategoryId, term: string): boolean {
   const category = categoryById[categoryId];
@@ -40,7 +41,7 @@ export default function AllRecipes() {
       const matchesTerm =
         !term ||
         recipe.title.toLowerCase().includes(term) ||
-        recipe.ingredients.some((ing) => ing.toLowerCase().includes(term)) ||
+        flattenIngredients(recipe.ingredients).some((ing) => ing.toLowerCase().includes(term)) ||
         recipe.categories?.some((categoryId) => categoryMatchesTerm(categoryId, term));
       const matchesCategory = activeCategoriesByGroup.every((group) =>
         group.some((cat) => recipe.categories?.includes(cat))
