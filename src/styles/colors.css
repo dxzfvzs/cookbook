@@ -2,11 +2,13 @@
   /* Page & panels */
   --page-bg: #efe1ca;
   --panel-bg: #f4f2ec;
-  --panel-bg--paper: #eae6db;
   --card-bg: #f9f9fb;
   --card-border: #e2e2e7;
   --panel-bg-translucent: rgb(255 255 255 / 0.2);
+  --panel-bg-paper: rgb(255 255 255 / 0.4);
   --accent: #d0d0d5;
+  --card-title-bg: #ecdec7;
+  --card-title-bg--darker: #dfceb1;
 
   /* Text */
   --text-main: #222;

@@ -100,7 +100,7 @@ main {
 }
 
 .panel--solid--paper {
-  background: var(--panel-bg);
+  background: var(--panel-bg-paper);
 }
 
 .scroll-list {
