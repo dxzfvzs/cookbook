@@ -1,6 +1,10 @@
 {
   "title": "Thai Curry Noodles",
-  "categories": ["lunch", "savory", "carnivore"],
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
   "ingredients": [
     "udon noodles or spaghetti",
     "soy sauce",
@@ -25,6 +29,5 @@
     "Set cooked meat aside and in the same pan fry up some veggies with soy sauce + fish sauce + oyster sauce. Set aside.",
     "In the same pan fry the chopped up onion until translucent, and then add garlic. Stir for 30s, add red curry paste. After few seconds add coconut mix.",
     "Cook for a few minutes, thicken if needed, then combine everything together."
-  ],
-  "fileName": "thai-curry-noodles"
+  ]
 }

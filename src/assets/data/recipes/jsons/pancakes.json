@@ -1,6 +1,10 @@
 {
   "title": "Pancakes",
-  "categories": ["dessert", "sweet", "vegetarian"],
+  "categories": [
+    "dessert",
+    "sweet",
+    "vegetarian"
+  ],
   "ingredients": [
     "2 cups all-purpose flour",
     "1 tsp baking powder",
@@ -16,6 +20,5 @@
     "Mix everything up properly",
     "Gently oil or butter up a pan for the first pancake.",
     "Once hot add pancakes. Do not add more oil or butter while frying. Flip once the top is forming solid bubble holes."
-  ],
-  "fileName": "pancakes"
+  ]
 }

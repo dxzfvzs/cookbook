@@ -1,6 +1,10 @@
 {
   "title": "Znojmo",
-  "categories": ["lunch", "savory", "carnivore"],
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
   "ingredients": [
     "1 onion",
     "600g of pork cuts",
@@ -21,6 +25,5 @@
     "Once meat is tender, add another spoon of mustard, and cook 15 more mins.",
     "Add the eggs.",
     "Serve with potatoes or rice."
-  ],
-  "fileName": "znojmo"
+  ]
 }

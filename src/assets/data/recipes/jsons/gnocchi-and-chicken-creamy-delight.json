@@ -1,6 +1,10 @@
 {
   "title": "Gnocchi and Chicken Creamy Delight",
-  "categories": ["lunch", "savory", "carnivore"],
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
   "ingredients": [
     "500g gnocchi",
     "500g chicken breasts, cubed",
@@ -18,6 +22,5 @@
     "Season the chicken meat with soil, pepper, garlic powder, paprika and italian herbs. Fry until golden.",
     "Set aside and (optionally fry onion, then) add some chopped up tomatoes for a few minutes.",
     "Add heavy cream and cheese."
-  ],
-  "fileName": "gnocchi-and-chicken-creamy-delight"
+  ]
 }

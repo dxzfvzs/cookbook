@@ -1,6 +1,10 @@
 {
   "title": "Baked Trout",
-  "categories": ["lunch", "savory", "pescetarian"],
+  "categories": [
+    "lunch",
+    "savory",
+    "pescetarian"
+  ],
   "ingredients": [
     "whole trout",
     "salt",
@@ -12,6 +16,5 @@
   "instructions": [
     "Salt the trout generously, add herbs, fill with lemon.",
     "Bake for 15-20 min at 200-220C."
-  ],
-  "fileName": "baked-trout"
+  ]
 }

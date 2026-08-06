@@ -1,4 +1,7 @@
-import type { Recipe } from "./RecipeDto.ts";
+import type { Recipe, RecipeData } from "./RecipeDto.ts";
 
-const modules = import.meta.glob("./jsons/*.json", { eager: true });
-export const initialRecipes: Recipe[] = Object.values(modules) as Recipe[];
+const modules = import.meta.glob("./jsons/*.json", { eager: true }) as Record<string, RecipeData>;
+export const initialRecipes: Recipe[] = Object.entries(modules).map(([path, data]) => ({
+  ...data,
+  fileName: path.match(/([^/]+)\.json$/)![1],
+}));

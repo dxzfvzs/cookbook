@@ -1,6 +1,10 @@
 {
   "title": "Pork Ribs",
-  "categories": ["lunch", "savory", "carnivore"],
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
   "ingredients": [
     "1kg pork ribs",
     "2tbsp ketchup",
@@ -15,6 +19,5 @@
   ],
   "instructions": [
     "Slather all on top and bake?"
-  ],
-  "fileName": "pork-ribs"
+  ]
 }

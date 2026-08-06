@@ -1,6 +1,10 @@
 {
   "title": "Carbonara (Authentic) Pasta Sauce",
-  "categories": ["lunch", "savory", "carnivore"],
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
   "ingredients": [
     "500g al-dente spaghetti",
     "250g pancetta or bacon",
@@ -18,6 +22,5 @@
     "Remove bacon from the heat and wait a bit for it to not be scorching hot.",
     "Take a bit of spaghetti water and add it into egg mixture in order to temper it a bit.",
     "Add spaghetti and egg mixture into the pan and keep stirring so the egg does not clump, until creamy and glossy."
-  ],
-  "fileName": "carbonara-(authentic)-pasta-sauce"
+  ]
 }

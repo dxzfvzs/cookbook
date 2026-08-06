@@ -1,6 +1,10 @@
 {
   "title": "Provence Chicken",
-  "categories": ["lunch", "savory", "carnivore"],
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
   "ingredients": [
     "Chicken thighs",
     "Salt",
@@ -16,6 +20,5 @@
     "Add a bit of water and some butter.",
     "Bake at 180-200c for about an hour.",
     "Serve with rice."
-  ],
-  "fileName": "provence-chicken"
+  ]
 }

@@ -1,6 +1,10 @@
 {
   "title": "Chilli con Carne",
-  "categories": ["lunch", "savory", "carnivore"],
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
   "ingredients": [
     "1 large onion",
     "3 garlic cloves, chopped up",
@@ -28,6 +32,5 @@
   "notes": [
     "This makes a lot of sauce.",
     "Experiments with different meat types did not taste good. Non-meat version does not taste good either."
-  ],
-  "fileName": "chilli-con-carne"
+  ]
 }

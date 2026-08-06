@@ -1,6 +1,10 @@
 {
   "title": "Tomato Curry",
-  "categories": ["lunch", "savory", "vegetarian"],
+  "categories": [
+    "lunch",
+    "savory",
+    "vegetarian"
+  ],
   "ingredients": [
     "1 tbsp oil",
     "1 tbsp fresh ginger, chopped",
@@ -30,6 +34,5 @@
   ],
   "notes": [
     "If you do not add flour, it can basically be a soup."
-  ],
-  "fileName": "tomato-curry"
+  ]
 }

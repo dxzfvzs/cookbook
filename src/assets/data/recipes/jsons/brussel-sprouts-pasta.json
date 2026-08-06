@@ -1,6 +1,10 @@
 {
   "title": "Brussel Sprouts Pasta",
-  "categories": ["lunch", "savory", "carnivore"],
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
   "ingredients": [
     "250g brussels sprouts, halved and cleaned",
     "150g carrots, chopped",
@@ -31,6 +35,5 @@
     "Mix some flour with water, and add into the pan.",
     "Add meat back in and cook for a bit.",
     "Serve with a garnish of sesame seeds and spring onion, with some noodles."
-  ],
-  "fileName": "brussel-sprouts-pasta"
+  ]
 }

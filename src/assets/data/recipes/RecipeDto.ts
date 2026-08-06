@@ -5,12 +5,15 @@ export type IngredientSection = {
   items: string[]
 }
 
-export type Recipe = {
+export type RecipeData = {
   title: string
   categories?: CategoryId[]
   ingredients: string[] | IngredientSection[]
   instructions: string[]
   notes?: string[],
+}
+
+export type Recipe = RecipeData & {
   fileName: string,
 }
 

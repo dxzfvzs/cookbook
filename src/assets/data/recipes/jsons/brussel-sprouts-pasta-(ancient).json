@@ -1,6 +1,10 @@
 {
   "title": "Brussel Sprouts Pasta (Ancient)",
-  "categories": ["lunch", "savory", "pescetarian"],
+  "categories": [
+    "lunch",
+    "savory",
+    "pescetarian"
+  ],
   "ingredients": [
     "250g brussels sprouts, halved",
     "butter",
@@ -16,6 +20,5 @@
     "Add some butter and continue to fry on both sides.",
     "Add noodles and about a spoon of each sauces.",
     "Off heat and add baby spinach and onion."
-  ],
-  "fileName": "brussel-sprouts-pasta-(ancient)"
+  ]
 }

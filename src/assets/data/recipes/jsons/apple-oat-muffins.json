@@ -1,6 +1,10 @@
 {
   "title": "Apple-Oat Muffins",
-  "categories": ["pastry", "sweet", "vegetarian"],
+  "categories": [
+    "pastry",
+    "sweet",
+    "vegetarian"
+  ],
   "ingredients": [
     "3/4 cup all-purpose flour",
     "1/2 cup rolled oats",
@@ -22,6 +26,5 @@
     "Let chill for a few minutes.",
     "Add soda and baking powder. Mix up, fill muffin trays.",
     "Bake a few mins at 180C."
-  ],
-  "fileName": "apple-oat-muffins"
+  ]
 }

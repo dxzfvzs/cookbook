@@ -1,6 +1,10 @@
 {
   "title": "Potato Salad with Scallions and Radishes",
-  "categories": ["snack", "savory", "vegetarian"],
+  "categories": [
+    "snack",
+    "savory",
+    "vegetarian"
+  ],
   "ingredients": [
     "potatoes",
     "radishes",
@@ -17,6 +21,5 @@
     "Add a mix of mayo, heavy cream, mustard, pepper and lemon juice.",
     "Chop up scallions and radishes, stir into the salad.",
     "Best served alongside fish."
-  ],
-  "fileName": "potato-salad-with-scallions-and-radishes"
+  ]
 }
