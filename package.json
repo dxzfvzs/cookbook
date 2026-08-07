@@ -8,9 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "add-simple-recipe": " cd .\\src\\assets\\data\\recipes\\ && node add-recipe-cli.js"
+    "add-recipe": " cd .\\src\\assets\\data\\recipes\\ && node add-recipe-cli.js"
   },
   "dependencies": {
+    "@inquirer/prompts": "^8.5.2",
     "lucide-react": "^1.27.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
