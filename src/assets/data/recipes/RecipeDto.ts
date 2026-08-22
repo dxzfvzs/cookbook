@@ -48,7 +48,7 @@ export const isInstructionSections = (
 ): instructions is InstructionSection[] =>
   instructions.length > 0 && typeof instructions[0] !== "string";
 
-const ALTERNATIVE_PLACEHOLDER_PREFIX = "@alt:";
+export const ALTERNATIVE_PLACEHOLDER_PREFIX = "@alt:";
 
 export const getAlternativeKey = (item: string): string | undefined =>
   item.startsWith(ALTERNATIVE_PLACEHOLDER_PREFIX)
