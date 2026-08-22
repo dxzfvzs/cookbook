@@ -25,6 +25,10 @@ describe("filterVisibleCategories", () => {
     expect(result).toEqual(["sweet", "lunch"]);
   });
 
+  it("if the recipe is drink, everything but drink is hidden", () => {
+    const result = filterVisibleCategories({ ...bogusRecipe, categories: ["sweet", "vegetarian", "drink"] }, []);
+    expect(result).toEqual(["drink"]);
+  });
 
   it("sorts the categories so the outcome is last", () => {
     const result = filterVisibleCategories({
