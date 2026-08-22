@@ -5,11 +5,16 @@ export type IngredientSection = {
   items: string[]
 }
 
+export type InstructionSection = {
+  section: string
+  items: string[]
+}
+
 export type RecipeData = {
   title: string
   categories?: CategoryId[]
   ingredients: string[] | IngredientSection[]
-  instructions: string[]
+  instructions: string[] | InstructionSection[]
   notes?: string[],
 }
 
@@ -24,3 +29,8 @@ export const isIngredientSections = (
 
 export const flattenIngredients = (ingredients: string[] | IngredientSection[]): string[] =>
   isIngredientSections(ingredients) ? ingredients.flatMap((section) => section.items) : ingredients;
+
+export const isInstructionSections = (
+  instructions: string[] | InstructionSection[]
+): instructions is InstructionSection[] =>
+  instructions.length > 0 && typeof instructions[0] !== "string";

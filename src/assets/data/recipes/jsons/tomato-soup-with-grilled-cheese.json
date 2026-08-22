@@ -1,0 +1,67 @@
+{
+  "title": "Tomato Soup with Grilled Cheese",
+  "categories": [
+    "soup",
+    "savory",
+    "vegetarian"
+  ],
+  "ingredients": [
+    {
+      "section": "Soup",
+      "items": [
+        "1 onion",
+        "few tomatoes (cherry)",
+        "400g canned tomatoes",
+        "2 garlic cloves",
+        "1 boulion cube",
+        "300ml water",
+        "100 ml heavy cream",
+        "pepper to taste",
+        "1 tbsp sugar",
+        "1 tsp oregano",
+        "half tsp basil",
+        "pinch of chilli or chilli flakes",
+        "fresh basil + 1tsp heavy cream"
+      ]
+    },
+    {
+      "section": "Grilled cheese",
+      "items": [
+        "favorite bread",
+        "1 slice gouda cheese",
+        "1 slice emmental cheese",
+        "1 slice cheddar cheese",
+        "butter"
+      ]
+    }
+  ],
+  "instructions": [
+    {
+      "section": "Soup",
+      "items": [
+        "Cut up the onion and fry it alongside whole tomatoes over medium heat with a bit of oil.",
+        "Once the onion is done, add garlic and spices for 60s.",
+        "Move everything from a pan into a pot, and add canned tomatoes, sugar, cube and water.",
+        "Simmer for a few minutes, optionally add a bit of tomato paste.",
+        "Add a bit of heavy cream, mix and let cool off enough for blending, then blend.",
+        "Bring back to a simmer, adjust spices, sugar and acidity to taste."
+      ]
+    },
+    {
+      "section": "Grilled cheese",
+      "items": [
+        "Add a bit of butter into a pan.",
+        "While that melts, prepare the bread with a slice of each type of cheese.",
+        "Fry on low-medium heat until browned on both sides, add more butter if needed."
+      ]
+    },
+    {
+      "section": "Serving",
+      "items": [
+        "Plate the soup, add a teaspoon of heavy cream in the middle, shape it into a swirl.",
+        "Add a top few leaves of a basil on top.",
+        "Cut grilled cheese in half and serve while still piping hot."
+      ]
+    }
+  ]
+}

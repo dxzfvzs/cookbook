@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { initialRecipes } from "../assets/data/recipes/init.ts";
-import { isIngredientSections } from "../assets/data/recipes/RecipeDto.ts";
+import { isIngredientSections, isInstructionSections } from "../assets/data/recipes/RecipeDto.ts";
 import "./recipepage.css"
 import CategorySegment from "../components/category-icon/CategorySegment.tsx";
 
@@ -66,14 +66,41 @@ const RecipePage: React.FC = () => {
       </aside>
       <div className="recipe--instructions panel panel--solid--paper">
         <h2 className="uppercase recipe--tab-title">Instructions</h2>
-        <ol className="recipe--instructions-list">
-          {recipe.instructions.map((i, idx) => (
-            <li key={idx}>
-              <span className="recipe--instructions-number">{idx + 1}</span>
-              <span>{i}</span>
-            </li>
-          ))}
-        </ol>
+        {isInstructionSections(recipe.instructions) ? (
+          (() => {
+            let stepCount = 0;
+            return recipe.instructions.map((section, sIdx) => (
+              <div key={sIdx} className="recipe--instructions-section">
+                <div className="recipe--instructions-section-heading">
+                  <h3 className="recipe--instructions-section-title uppercase">
+                    {section.section}
+                  </h3>
+                  <span className="recipe--instructions-section-line" aria-hidden="true" />
+                </div>
+                <ol className="recipe--instructions-list">
+                  {section.items.map((i, idx) => {
+                    stepCount += 1;
+                    return (
+                      <li key={idx}>
+                        <span className="recipe--instructions-number">{stepCount}</span>
+                        <span>{i}</span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            ));
+          })()
+        ) : (
+          <ol className="recipe--instructions-list">
+            {recipe.instructions.map((i, idx) => (
+              <li key={idx}>
+                <span className="recipe--instructions-number">{idx + 1}</span>
+                <span>{i}</span>
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
     </div>
   );
