@@ -59,6 +59,36 @@ const askSectionedMultilines = async (type) => {
   return entries;
 }
 
+const askInstructionAlternatives = async () => {
+  const wantsAlternatives = await askYesOrNo(
+    "Do you want to define alternative-choice options that an instruction step can insert (e.g. different strengths)?",
+    true
+  );
+  if (!wantsAlternatives) return undefined;
+
+  const alternatives = [];
+  while (true) {
+    const key = await input({message: "Alternative key (press Enter on empty line to finish, e.g. \"strength\"):"});
+    if (!key) break;
+    const label = await input({message: `Label to show above the options (Enter to use "${key}"):`});
+
+    const options = [];
+    console.log(`Enter options for "${key}" (press Enter on empty name to finish):`);
+    while (true) {
+      const name = await input({message: "- Option name:"});
+      if (!name) break;
+      const text = await input({message: `  Instruction text for "${name}":`, required: true});
+      const recommended = await askYesOrNo(`  Mark "${name}" as the recommended option?`, true);
+      options.push(recommended ? {name, text, recommended: true} : {name, text});
+    }
+
+    alternatives.push(label ? {key, label, options} : {key, options});
+    console.log(`Reference this in an instruction step with: @alt:${key}\n`);
+  }
+
+  return alternatives.length > 0 ? alternatives : undefined;
+}
+
 const getRecipeFromCli = async () => {
   try {
     const title = await askTitle();
@@ -80,6 +110,10 @@ const getRecipeFromCli = async () => {
 
     console.log("");
 
+    const instructionAlternatives = await askInstructionAlternatives();
+
+    console.log("");
+
     const hasMoreInstructionsSections = await askYesOrNo("Do you want sections for instructions?");
     const instructions = hasMoreInstructionsSections
       ? await askSectionedMultilines("instructions")
@@ -87,7 +121,7 @@ const getRecipeFromCli = async () => {
 
     console.log("");
 
-    return {title, categories, ingredients, instructions};
+    return {title, categories, ingredients, instructionAlternatives, instructions};
   } catch (error) {
     if (error.name === 'ExitPromptError') {
       console.error(`Exiting, no recipe will be written.`);

@@ -1,0 +1,45 @@
+{
+  "title": "Pina Colada",
+  "categories": [
+    "drink",
+    "sweet",
+    "vegetarian"
+  ],
+  "ingredients": [
+    "up to 80ml white rum",
+    "up to 200ml 100% pineapple juice",
+    "40ml heavy cream",
+    "20ml Monin coconut syrup"
+  ],
+  "instructionAlternatives": [
+    {
+      "key": "strength",
+      "label": "Strength",
+      "options": [
+        {
+          "name": "Full",
+          "text": "Add 80ml rum and 160ml pineapple juice to the shaker.",
+          "recommended": true
+        },
+        {
+          "name": "Almost full",
+          "text": "Add 60ml rum and 180ml pineapple juice to the shaker."
+        },
+        {
+          "name": "Half to almost full",
+          "text": "Add 50ml rum and 190ml pineapple juice to the shaker."
+        },
+        {
+          "name": "Half",
+          "text": "Add 40ml rum and 200ml pineapple juice to the shaker."
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    "@alt:strength",
+    "Add 40ml of heavy cream and 20ml of syrup.",
+    "Shake until smooth and combined.",
+    "Split into two cups and serve over some ice."
+  ]
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { initialRecipes } from "../assets/data/recipes/init.ts";
-import { isIngredientSections, isInstructionSections } from "../assets/data/recipes/RecipeDto.ts";
+import { getAlternativeKey, isIngredientSections, isInstructionSections } from "../assets/data/recipes/RecipeDto.ts";
 import "./recipepage.css"
 import CategorySegment from "../components/category-icon/CategorySegment.tsx";
 
@@ -21,8 +21,26 @@ const IngredientText: React.FC<{ text: string }> = ({ text }) => {
 const RecipePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const recipe = initialRecipes.find(r => r.fileName === `${id}`);
+
+  const [selectedAlternatives, setSelectedAlternatives] = React.useState<Record<string, string>>(() => {
+    const defaults: Record<string, string> = {};
+    recipe?.instructionAlternatives?.forEach((alt) => {
+      const defaultOption = alt.options.find(o => o.recommended) ?? alt.options[0];
+      if (defaultOption) defaults[alt.key] = defaultOption.name;
+    });
+    return defaults;
+  });
+
   if (!recipe) return <p>Recipe {id} not found.</p>;
-  
+
+  const resolveInstructionText = (item: string): string => {
+    const altKey = getAlternativeKey(item);
+    if (!altKey) return item;
+    const alt = recipe.instructionAlternatives?.find(a => a.key === altKey);
+    const option = alt?.options.find(o => o.name === selectedAlternatives[altKey]) ?? alt?.options[0];
+    return option?.text ?? item;
+  };
+
   return (
     <div className="recipe-page">
       <div className="recipe-title">
@@ -65,6 +83,30 @@ const RecipePage: React.FC = () => {
         )}
       </aside>
       <div className="recipe--instructions panel panel--solid--paper">
+        {recipe.instructionAlternatives?.map((alt) => (
+          <div key={alt.key} className="recipe--instruction-alternatives">
+            <h2 className="uppercase recipe--tab-title">
+              Choose {alt.label ?? alt.key}:
+            </h2>
+            <div className="recipe--instruction-alternatives-options">
+              {alt.options.map((option) => (
+                <button
+                  key={option.name}
+                  type="button"
+                  className={
+                    "recipe--instruction-alternative-pill" +
+                    (selectedAlternatives[alt.key] === option.name
+                      ? " recipe--instruction-alternative-pill--selected"
+                      : "")
+                  }
+                  onClick={() => setSelectedAlternatives(prev => ({ ...prev, [alt.key]: option.name }))}
+                >
+                  {option.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
         <h2 className="uppercase recipe--tab-title">Instructions</h2>
         {isInstructionSections(recipe.instructions) ? (
           (() => {
@@ -83,7 +125,7 @@ const RecipePage: React.FC = () => {
                     return (
                       <li key={idx}>
                         <span className="recipe--instructions-number">{stepCount}</span>
-                        <span>{i}</span>
+                        <span>{resolveInstructionText(i)}</span>
                       </li>
                     );
                   })}
@@ -96,7 +138,7 @@ const RecipePage: React.FC = () => {
             {recipe.instructions.map((i, idx) => (
               <li key={idx}>
                 <span className="recipe--instructions-number">{idx + 1}</span>
-                <span>{i}</span>
+                <span>{resolveInstructionText(i)}</span>
               </li>
             ))}
           </ol>

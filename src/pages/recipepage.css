@@ -149,6 +149,43 @@
   margin-left: 1em;
 }
 
+.recipe--instruction-alternatives {
+  margin-bottom: 1.25em;
+}
+
+.recipe--instruction-alternatives-label {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  margin-bottom: 0.5em;
+}
+
+.recipe--instruction-alternatives-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+}
+
+.recipe--instruction-alternative-pill {
+  font: inherit;
+  font-size: 0.9em;
+  color: var(--recipe-title-text);
+  cursor: pointer;
+  border: 2px solid var(--card-title-bg);
+  background-color: var(--card-bg);
+  padding: 0.1em 1em;
+  border-radius: var(--border-radius);
+}
+
+.recipe--instruction-alternative-pill:hover {
+  border-color: var(--card-title-bg--darker);
+}
+
+.recipe--instruction-alternative-pill--selected {
+  border-color: var(--card-title-bg--darker);
+  background-color: var(--card-title-bg);
+  font-weight: 600;
+}
+
 .recipe--ingredients {
   grid-area: ingredients;
   display: flex;

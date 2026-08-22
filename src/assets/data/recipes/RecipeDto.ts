@@ -10,11 +10,24 @@ export type InstructionSection = {
   items: string[]
 }
 
+export type InstructionAlternativeOption = {
+  name: string
+  text: string
+  recommended?: boolean
+}
+
+export type InstructionAlternatives = {
+  key: string
+  label?: string
+  options: InstructionAlternativeOption[]
+}
+
 export type RecipeData = {
   title: string
   categories?: CategoryId[]
   ingredients: string[] | IngredientSection[]
   instructions: string[] | InstructionSection[]
+  instructionAlternatives?: InstructionAlternatives[]
   notes?: string[],
 }
 
@@ -34,3 +47,10 @@ export const isInstructionSections = (
   instructions: string[] | InstructionSection[]
 ): instructions is InstructionSection[] =>
   instructions.length > 0 && typeof instructions[0] !== "string";
+
+const ALTERNATIVE_PLACEHOLDER_PREFIX = "@alt:";
+
+export const getAlternativeKey = (item: string): string | undefined =>
+  item.startsWith(ALTERNATIVE_PLACEHOLDER_PREFIX)
+    ? item.slice(ALTERNATIVE_PLACEHOLDER_PREFIX.length)
+    : undefined;
