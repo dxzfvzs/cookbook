@@ -51,14 +51,11 @@ const HeadlineSection = ({ recipe }: { recipe: Recipe }) => {
 
 const IngredientSectionsSimpleContent = ({ ingredients }: { ingredients: string[] }) => {
   return (
-    <aside className="recipe--ingredients panel panel--solid--paper">
-      <h2 className="uppercase recipe--tab-title">Ingredients</h2>
-      <ul className="recipe--ingredients-list">
-        {ingredients.map((i, idx) => (
-          <li key={idx}><IngredientText text={i}/></li>
-        ))}
-      </ul>
-    </aside>
+    <ul className="recipe--ingredients-list">
+      {ingredients.map((i, idx) => (
+        <li key={idx}><IngredientText text={i}/></li>
+      ))}
+    </ul>
   );
 }
 
