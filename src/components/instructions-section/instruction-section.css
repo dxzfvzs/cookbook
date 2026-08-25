@@ -1,0 +1,130 @@
+.recipe--instructions ol {
+  color: var(--text-main);
+}
+
+.recipe--instructions li {
+  margin-bottom: 0.6em;
+}
+
+.recipe--instructions-section {
+  margin-bottom: 1em;
+}
+
+.recipe--instructions-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 0.75em;
+}
+
+.recipe--instructions-section-title {
+  background-color: var(--card-title-bg);
+  color: var(--recipe-title-text);
+  padding: 0.3em 0.8em;
+  border-radius: 0.6em;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+.recipe--instructions-section-line {
+  flex: 1;
+  height: 3px;
+  background-color: var(--divider);
+}
+
+.recipe--instructions-section .recipe--instructions-list {
+  margin-left: 1em;
+}
+
+.recipe--instruction-alternatives {
+  margin-bottom: 1.25em;
+}
+
+.recipe--instruction-alternatives-label {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  margin-bottom: 0.5em;
+}
+
+.recipe--instruction-alternatives-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+}
+
+.recipe--instruction-alternative-pill {
+  font: inherit;
+  font-size: 0.9em;
+  color: var(--recipe-title-text);
+  cursor: pointer;
+  border: 2px solid var(--card-title-bg);
+  background-color: var(--card-bg);
+  padding: 0.1em 1em;
+  border-radius: var(--border-radius);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.recipe--instruction-alternative-pill:hover {
+  border-color: var(--card-title-bg--darker);
+}
+
+.recipe--instruction-alternative-pill:focus-visible {
+  outline: 2px solid var(--card-title-bg--darker);
+  outline-offset: 2px;
+}
+
+.recipe--instruction-alternative-pill--selected {
+  border-color: var(--card-title-bg--darker);
+  background-color: var(--card-title-bg);
+  font-weight: 600;
+}
+
+.recipe--instructions {
+  grid-area: instructions;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1em;
+}
+
+.recipe--instructions-list {
+  min-width: 0;
+  list-style: none;
+}
+
+.recipe--instructions-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.recipe--instructions-list li.is-done {
+  opacity: 0.5;
+}
+
+.recipe--instructions-number {
+  flex: 0 0 auto;
+  width: 1.9em;
+  height: 1.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--card-title-bg);
+  border: 2px solid var(--card-title-bg--darker);
+  color: var(--recipe-title-text);
+  font-weight: 600;
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+.recipe--instructions-list li > span:last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: break-word;
+}

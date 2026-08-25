@@ -1,0 +1,68 @@
+.recipe--ingredients ul {
+  color: var(--text-main);
+}
+
+.recipe--ingredients-list {
+  list-style: none;
+}
+
+.recipe--ingredients li {
+  margin-bottom: 0.4em;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.recipe--ingredients li.is-done {
+  opacity: 0.5;
+}
+
+.recipe--ingredients li::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+  background: var(--card-title-bg--darker);
+}
+
+.recipe--ingredient-note {
+  font-size: 0.7em;
+  opacity: 0.8;
+}
+
+.recipe--ingredients-section {
+  margin-bottom: 1em;
+}
+
+.recipe--ingredients-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 0.75em;
+}
+
+.recipe--ingredients-section-title {
+  background-color: var(--card-title-bg);
+  color: var(--recipe-title-text);
+  padding: 0.3em 0.8em;
+  border-radius: 0.6em;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+.recipe--ingredients-section-line {
+  flex: 1;
+  height: 3px;
+  background-color: var(--divider);
+}
+
+.recipe--ingredients {
+  grid-area: ingredients;
+  display: flex;
+  flex-direction: column;
+}
