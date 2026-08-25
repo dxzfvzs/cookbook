@@ -77,6 +77,14 @@
   display: flex;
   align-items: center;
   gap: 0.6em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.recipe--ingredients li.is-done {
+  opacity: 0.5;
 }
 
 .recipe--ingredients li::before {
@@ -174,10 +182,17 @@
   background-color: var(--card-bg);
   padding: 0.1em 1em;
   border-radius: var(--border-radius);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .recipe--instruction-alternative-pill:hover {
   border-color: var(--card-title-bg--darker);
+}
+
+.recipe--instruction-alternative-pill:focus-visible {
+  outline: 2px solid var(--card-title-bg--darker);
+  outline-offset: 2px;
 }
 
 .recipe--instruction-alternative-pill--selected {
@@ -216,6 +231,14 @@
   display: flex;
   align-items: center;
   gap: 0.75em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.recipe--instructions-list li.is-done {
+  opacity: 0.5;
 }
 
 .recipe--instructions-number {
