@@ -6,12 +6,7 @@ import SearchBar from "../components/search/SearchBar.tsx";
 import CategorySidebar from "../components/category-sidebar/CategorySidebar.tsx";
 import { categoryById, type CategoryGroupId, type CategoryId } from "../assets/data/categories.ts";
 import { flattenIngredients } from "../assets/data/recipes/RecipeDto.ts";
-
-function categoryMatchesTerm(categoryId: CategoryId, term: string): boolean {
-  const category = categoryById[categoryId];
-  const names = [category.label.toLowerCase(), ...(category.keywords ?? [])];
-  return names.some((name) => name.includes(term) || term.includes(name));
-}
+import { categoryMatchesTerm } from "../lib/searchFilter.ts";
 
 export default function AllRecipes() {
   const [searchTerm, setSearchTerm] = useState("");
