@@ -1,0 +1,72 @@
+{
+  "title": "Butter Chicken",
+  "categories": [
+    "lunch",
+    "savory",
+    "carnivore"
+  ],
+  "ingredients": [
+    {
+      "section": "Marinade",
+      "items": [
+        "1/2 cup plain yogurt (full-fat is best)",
+        "1 tbsp lemon juice",
+        "1 tsp turmeric powder",
+        "1 tsp ground cumin",
+        "1 tsp ground coriander",
+        "1 tsp ginger powder",
+        "2 cloves garlic (crushed)",
+        "1 tsp salt",
+        "1 pinch dried fenugreek",
+        "1/4 tsp cinnamon",
+        "1/8 tsp black pepper",
+        "tiny pinch cardamom (optional)",
+        "750g chicken thighs"
+      ]
+    },
+    {
+      "section": "Curry",
+      "items": [
+        "2 tbsp butter",
+        "1 medium onion, finely diced",
+        "2 cloves garlic (crushed)",
+        "1/2 tsp ginger powder",
+        "1 tsp ground cumin",
+        "1 tsp ground coriander",
+        "1/4 tsp cinnamon",
+        "1/8 tsp black pepper",
+        "1 can chopped or crushed tomatoes",
+        "1 tbsp sugar",
+        "1 cup heavy cream",
+        "1 tbsp butter",
+        "1/2 tsp dried fenugreek leaves (kasuri methi), optional but recommended",
+        "salt to taste"
+      ]
+    },
+    {
+      "section": "To serve",
+      "items": [
+        "Basmati or Jasmine rice",
+        "Naan",
+        "Fresh cilantro"
+      ]
+    }
+  ],
+  "instructions": [
+    "Mix all marinade ingredients together, then add the chicken and coat thoroughly.",
+    "Cover and refrigerate for at least 1 hour, ideally overnight.",
+    "Heat a large pan over medium-high heat and add some butter.",
+    "Fry the pieces until deeply browned on the outside and cooked through. Set aside.",
+    "Lower the heat to medium. Add chopped onion and cook until soft and lightly golden.",
+    "Add the garlic and ginger and cook for about 1 minute.",
+    "Add the cumin, coriander, cinnamon and black pepper. Stir for about 30 seconds.",
+    "Add the tomatoes, sugar and a little salt.",
+    "Simmer uncovered for 15–20 minutes until the sauce has thickened.",
+    "Blend the sauce until smooth if desired, then return it to the pan.",
+    "Lower the heat and stir in the heavy cream. Simmer gently for 3–5 minutes.",
+    "Return the chicken to the sauce and simmer for another 5 minutes to absorb the sauce.",
+    "Stir in the remaining 1 tbsp butter and crushed kasuri methi.",
+    "Taste and adjust salt, sugar or spices as needed.",
+    "Serve hot with basmati or Jasmine rice and naan. Garnish generously with fresh cilantro."
+  ]
+}
