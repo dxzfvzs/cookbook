@@ -17,9 +17,9 @@ export default function AllRecipes() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategories, setActiveCategories] = useState<CategoryId[]>([]);
 
-  const handleSelectCategory = (category: CategoryId, isMiddleClick: boolean) => {
+  const handleSelectCategory = (category: CategoryId, additive: boolean) => {
     setActiveCategories((prev) => {
-      if (isMiddleClick) {
+      if (additive) {
         return prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category];
       }
       return prev.length === 1 && prev[0] === category ? [] : [category];

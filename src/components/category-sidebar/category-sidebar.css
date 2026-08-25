@@ -37,10 +37,13 @@
   font: inherit;
   text-align: left;
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.category-sidebar--item:not(.category-sidebar--item-active):hover {
-  background: var(--hover-bg);
+@media (hover: hover) and (pointer: fine) {
+  .category-sidebar--item:not(.category-sidebar--item-active):hover {
+    background: var(--hover-bg);
+  }
 }
 
 .category-sidebar--item-active {
